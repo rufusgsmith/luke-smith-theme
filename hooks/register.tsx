@@ -60,8 +60,10 @@ export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     // A drawn scene takes glass: no blur and see-through panels, so the ground shows.
     const set = await $.theme.set({ backdrop: { scene: 'businesses', glass: { blur: 0, opacity: 0.4 } } })
-    // Speak up only on failure; undefined clears the line.
-    $.ui.status(set.isDrawn ? undefined : `Businesses backdrop not drawn: ${set.reason}`)
+    // Speak up only on real failure; undefined clears the line. Not drawn yet but holding a
+    // requestId means the window hasn't attached, and the backdrop draws when it does.
+    const isFailed = !set.isDrawn && set.requestId === undefined
+    $.ui.status(isFailed ? `Businesses backdrop not drawn: ${set.reason}` : undefined)
 
     return next(e)
   })
