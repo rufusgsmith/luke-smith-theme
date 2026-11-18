@@ -20,10 +20,10 @@ const STEP = 25
 
 // Each pair shares one wave so its two bands run parallel, like the logos' ribbons.
 const RIBBONS: Ribbon[] = [
-  { y: 200, amplitude: 70, wavelength: 2200, phase: 0.6, thickness: 110, twist: 0, light: '#f7f7f7', deep: '#eeeeee' },
-  { y: 320, amplitude: 70, wavelength: 2200, phase: 0.6, thickness: 100, twist: 1.3, light: '#fafafa', deep: '#f3f3f3' },
-  { y: 690, amplitude: 90, wavelength: 2600, phase: 2.4, thickness: 130, twist: 0.5, light: '#f7f7f7', deep: '#eeeeee' },
-  { y: 825, amplitude: 90, wavelength: 2600, phase: 2.4, thickness: 110, twist: 2, light: '#fafafa', deep: '#f3f3f3' },
+  { y: 200, amplitude: 70, wavelength: 2200, phase: 0.6, thickness: 110, twist: 0, light: '#fbfbfb', deep: '#f7f7f7' },
+  { y: 320, amplitude: 70, wavelength: 2200, phase: 0.6, thickness: 100, twist: 1.3, light: '#fdfdfd', deep: '#f9f9f9' },
+  { y: 690, amplitude: 90, wavelength: 2600, phase: 2.4, thickness: 130, twist: 0.5, light: '#fbfbfb', deep: '#f7f7f7' },
+  { y: 825, amplitude: 90, wavelength: 2600, phase: 2.4, thickness: 110, twist: 2, light: '#fdfdfd', deep: '#f9f9f9' },
 ]
 
 function band(ribbon: Ribbon): string {
